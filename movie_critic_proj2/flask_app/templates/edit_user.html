@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {{user.first_name}} {{user.last_name}}'s Profile</title>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/style.css")}}'>
+</head>
+<body>
+    <h1>Edit {{user.first_name}} {{user.last_name}}'s Profile</h1>
+    <h2>Edit a user</h2>
+    <form action="/users/{{user.id}}/update" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}">
+        <p>First Name: <input name="first_name" type="text" value="{{user.first_name}}"></p>
+        <p>Last Name: <input name="last_name" type="text" value="{{user.last_name}}"></p>
+        <p>Email: <input name="email" type="email" value="{{user.email}}"></p>
+        <p>Age: <input name="age" type="number" value="{{user.age}}"></p>
+        <button type="submit">Edit</button>
+    </form>
+
+    <a href="/">Go back to Dashboard</a>
+           
+</body>
+</html>

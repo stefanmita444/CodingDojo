@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.first_name}} {{user.last_name}} Profile Information</title>
+    <link rel="stylesheet" href='{{ url_for("static", filename="css/style.css")}}'>
+</head>
+<body>
+    <h1>Welcome {{user.first_name}} {{user.last_name}} to Review Dashboard</h1>
+    <h2>{{review.title}} Review by {{review.user.first_name}} {{review.user.last_name}}</h1>
+    <p>Rating: {{review.rating}}</p>
+    <p>Content: {{review.content}}</p>
+
+    <a href="/movie_dashboard">Go back to Dashboard</a>
+           
+</body>
+</html>
